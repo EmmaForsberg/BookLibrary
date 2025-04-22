@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))); // Ändra om du använder en annan databas
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); // Ändra om du använder en annan databas
 
 var app = builder.Build();
 
