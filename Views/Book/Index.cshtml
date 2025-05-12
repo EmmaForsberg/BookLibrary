@@ -20,6 +20,12 @@
             <th>
                 Is Read
             </th>
+            <th>
+            Edit
+            </th>
+            <th>
+            Delete
+            </th>
         </tr>
 
     @foreach (var book in Model)
@@ -30,6 +36,8 @@
             <td>@book.Author</td>
             <td>@book.Description</td>
             <td>@(book.IsRead ? "Read" : "Not Read")</td>
+            <td>  <a asp-action="Edit" asp-route-id="@book.Id">Edit</a></td>
+            <td> <a asp-action="Delete" asp-route-id="@book.Id">Delete</a></td>
         </tr>
     }
     </table>

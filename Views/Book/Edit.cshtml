@@ -1,0 +1,48 @@
+﻿@model BookLibrary.ViewModel.CreateBookViewModel
+@{
+    ViewData["Title"] = "Edit Book";
+}
+
+
+<h1>Edit Book</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" class="form-control" id="Title" name="Title" value="@Model.Title" />
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <textarea class="form-control" id="Description" name="Description">@Model.Description</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="Author">Author</label>
+        <input type="text" class="form-control" id="Author" name="Author" value="@Model.Author" />
+    </div>
+
+    <div class="form-group">
+        <label for="IsRead">Is Read</label>
+        <input type="checkbox" id="IsRead" name="IsRead" value="true" @(Model.IsRead ? "checked" : "") />
+        <span asp-validation-for="IsRead" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="GenreId">Genre</label>
+        <select asp-for="GenreId" class="form-control">
+            <option value="">Select Genre</option>
+            @foreach (var genre in Model.Genres)
+            {
+                <option value="@genre.Id">@genre.Name</option>
+            }
+        </select>
+
+
+        <span asp-validation-for="GenreId" class="text-danger"></span>
+    </div>
+
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
