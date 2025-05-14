@@ -1,0 +1,42 @@
+﻿.body{
+    background-color: hotpink;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.book-grid > div {
+    background-color: hotpink;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+.card {
+    height: 100%; /* Sätt en fast höjd om du vill ha en konsekvent höjd */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body {
+    flex-grow: 1; /* Gör så att card-body fyller den lediga höjden */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Lägg till gap mellan korten */
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}

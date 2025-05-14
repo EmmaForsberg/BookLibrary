@@ -1,8 +1,33 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Välkommen till bokbiblioteket!</h1>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <!-- Visa alla böcker -->
+        <div class="col">
+            <div class="card shadow-sm">
+             
+                <div class="card-body">
+                    <h5 class="card-title">📚 Visa alla böcker</h5>
+                    <p class="card-text">Se alla böcker som finns i biblioteket.</p>
+                    <a href="/Book/Index" class="btn btn-primary">Visa alla böcker</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lägg till ny bok -->
+        <div class="col">
+            <div class="card shadow-sm">
+
+                <div class="card-body">
+                    <h5 class="card-title">➕ Lägg till ny bok</h5>
+                    <p class="card-text">Lägg till en ny bok i biblioteket.</p>
+                    <a href="/Book/Create" class="btn btn-success">Lägg till bok</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
